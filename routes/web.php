@@ -30,6 +30,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::post('/insert_book', [BooksController::class,'insert']
+)->name('insert_book');
+
 
 Route::get('/add_book', function () {
     return view('add_book');

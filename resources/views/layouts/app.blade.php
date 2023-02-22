@@ -71,7 +71,7 @@
             <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="{{ route('register') }}">Sign up</a>
             @endif
             @else
-            <li class="nav-item dropdown">
+            <ul class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
                 </a>
@@ -86,7 +86,7 @@
                         @csrf
                     </form>
                 </div>
-            </li>
+            </ul>
             @endguest
         </nav>
 

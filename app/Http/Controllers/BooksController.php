@@ -29,10 +29,10 @@ class BooksController extends Controller
        
 
        $books = new books();
-       $books->book_name =  $name;
-       $books->book_price =  $price;
-       $books->book_auth =  $auth;
-       $books->book_picture =  $picture;
+       $books->name =  $name;
+       $books->price =  $price;
+       $books->auth =  $auth;
+       $books->picture =  $picture;
        $books->save();
        return redirect('/admin');
     }
