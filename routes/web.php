@@ -23,14 +23,17 @@ Route::get('/',[BooksController::class,'get_books']
 Route::get('/home',[BooksController::class,'get_books']
 )->name('home');
 
+Route::get('/admin',[BooksController::class,'get_bookss']
+)->name('admin');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
 
-Route::get('/admin', function () {
-    return view('admin');
-})->name('admin');
+Route::get('/add_book', function () {
+    return view('add_book');
+})->name('add_book');
 
 Route::get('/contact', function () {
     return view('contact');

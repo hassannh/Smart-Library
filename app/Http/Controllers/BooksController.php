@@ -13,23 +13,27 @@ class BooksController extends Controller
         $books_data = books::all();
         return view('home',['data'=>$books_data]);
     }
-
+    
+    function get_bookss(){
+        // $books = new books();
+        $books_data = books::all();
+        return view('admin',['data'=>$books_data]);
+    }
 
     function insert(Request $req)
     {
         $name = $req->get('name');
         $price = $req->get('price');
         $auth = $req->get('auth');
-        $picture = $req->file('picture')->getClientOriginalName();
-        // move uploaded file
-        $req->product_picture->move(public_path('picture'),$picture);
+        $picture = $req->file('picture');
+       
 
-       $product = new books();
-       $product->book_name =  $name;
-       $product->book_price =  $price;
-       $product->book_auth =  $auth;
-       $product->book_picture =  $picture;
-       $product->save();
+       $books = new books();
+       $books->book_name =  $name;
+       $books->book_price =  $price;
+       $books->book_auth =  $auth;
+       $books->book_picture =  $picture;
+       $books->save();
        return redirect('/admin');
     }
 }
