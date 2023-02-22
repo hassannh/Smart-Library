@@ -14,7 +14,7 @@ class BooksController extends Controller
         return view('home',['data'=>$books_data]);
     }
     
-    function get_bookss(){
+    function get_booksss(){
         // $books = new books();
         $books_data = books::all();
         return view('admin',['data'=>$books_data]);
@@ -38,40 +38,37 @@ class BooksController extends Controller
     }
 
 
-    function update(Request $req){
+    function update(Request $req, Books $books){
 
-        $ID = $req->get('id');
-        $Name = $req->get('name');
-        $Price = $req->get('price');
-        $auth = $req->get('auth');
-        $picture = $req->file('picture');
 
-        $books = books::find($ID);
 
-        $books->name = $Name;
-        $books->price = $Price;
-        $books->auth = $auth;
-        $books->picture = $picture;
-        $books->save();
+        $form = $req->validate([
+            'name' => ['required'],
+            'price' => 'required',
+            'auth' => 'required',
+            'picture' => 'required',
+        ]);
+
+        $books->update($form);
+
         return redirect('/admin');
+        // $ID = $req->get('id');
+        // $Name = $req->get('name');
+        // $Price = $req->get('price');
+        // $auth = $req->get('auth');
+        // $picture = $req->file('picture');
+
+        // $books = books::find($ID);
+
+        // $books->name = $Name;
+        // $books->price = $Price;
+        // $books->auth = $auth;
+        // $books->picture = $picture;
+        // $books->save();
+        // return redirect('/admin');
 
     }
 
 
-    // function updateORdelete(Request $req)
-    // {
-    //     $id = $req->get('id');
-    //     $name = $req->get('name');
-    //     $price = $req->get('price');
-    //     $auth = $req->get('auth');
-    //     $picture = $req->file('picture');
-    //     if($req->get('update') == 'Update'){
-    //         return view('update',['id'=>$id,'name'=>$name,'price'=>$price ,'auth'=>$auth , 'picture'=>$picture ]);
 
-    //     }else{
-    //         $prod = books::find($id);
-    //         $prod->delete();
-    //         return redirect('/admin');
-    //     }
-    // }
 }

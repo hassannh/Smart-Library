@@ -24,8 +24,8 @@ Route::get('/home',[BooksController::class,'get_books']
 )->name('home');
 
 
-Route::get('/admin',[BooksController::class,'get_bookss']
-)->name('admin');
+Route::get('/admin',[BooksController::class,'get_booksss']
+);
 
 
 
@@ -40,7 +40,7 @@ Route::post('/insert_book', [BooksController::class,'insert']
 
 
 
-Route::post('/update_book', [BooksController::class,'update']
+Route::post('/update_book/{Books}', [BooksController::class,'update']
 )->name('update_book');
 
 
@@ -52,9 +52,9 @@ Route::get('/add_book', function () {
 
 
 
-Route::get('/update_bookk', function () {
-    return view('update');
-})->name('update_bookk');
+// Route::get('/update_bookk', function () {
+//     return view('update');
+// })->name('update_bookk');
 
 
 

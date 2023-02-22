@@ -49,7 +49,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                     </svg>
                 </li>
-                <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="{{route('admin')}}">Admin</a></li>
+                <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="/admin">Admin</a></li>
                 <li class="text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -90,6 +90,7 @@
             @endguest
         </nav>
 
+        <!-- <x-flash /> -->
 
 
 
@@ -188,47 +189,47 @@
 
 
     <script>
-        // Burger menus
-        document.addEventListener('DOMContentLoaded', function() {
-            // open
-            const burger = document.querySelectorAll('.navbar-burger');
-            const menu = document.querySelectorAll('.navbar-menu');
+// Burger menus
+document.addEventListener('DOMContentLoaded', function() {
+    // open
+    const burger = document.querySelectorAll('.navbar-burger');
+    const menu = document.querySelectorAll('.navbar-menu');
 
-            if (burger.length && menu.length) {
-                for (var i = 0; i < burger.length; i++) {
-                    burger[i].addEventListener('click', function() {
-                        for (var j = 0; j < menu.length; j++) {
-                            menu[j].classList.toggle('hidden');
-                        }
-                    });
+    if (burger.length && menu.length) {
+        for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
                 }
-            }
+            });
+        }
+    }
 
-            // close
-            const close = document.querySelectorAll('.navbar-close');
-            const backdrop = document.querySelectorAll('.navbar-backdrop');
+    // close
+    const close = document.querySelectorAll('.navbar-close');
+    const backdrop = document.querySelectorAll('.navbar-backdrop');
 
-            if (close.length) {
-                for (var i = 0; i < close.length; i++) {
-                    close[i].addEventListener('click', function() {
-                        for (var j = 0; j < menu.length; j++) {
-                            menu[j].classList.toggle('hidden');
-                        }
-                    });
+    if (close.length) {
+        for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
                 }
-            }
+            });
+        }
+    }
 
-            if (backdrop.length) {
-                for (var i = 0; i < backdrop.length; i++) {
-                    backdrop[i].addEventListener('click', function() {
-                        for (var j = 0; j < menu.length; j++) {
-                            menu[j].classList.toggle('hidden');
-                        }
-                    });
+    if (backdrop.length) {
+        for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
                 }
-            }
-        });
-    </script>
+            });
+        }
+    }
+});
+</script>
 </body>
 
 </html>
