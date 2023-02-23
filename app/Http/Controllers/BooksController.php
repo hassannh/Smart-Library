@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\books;
+// use Illuminate\Http\RedirectResponse;
+use PHPUnit\TextUI\Configuration\Php;
 
 class BooksController extends Controller
 {
+    
     
     function get_books(){
         // $books = new books();
@@ -23,52 +26,68 @@ class BooksController extends Controller
     function insert(Request $req)
     {
         $name = $req->get('name');
-        $price = $req->get('price');
+        $description = $req->get('description');
         $auth = $req->get('auth');
         $picture = $req->file('picture');
+        $id_category = $req->get('id_category');
        
 
        $books = new books();
        $books->name =  $name;
-       $books->price =  $price;
+       $books->description =  $description;
        $books->auth =  $auth;
        $books->picture =  $picture;
+       $books->id_category =  $id_category;
+       if($req->hasFile('picture')){
+        $form['picture'] = $req->file('picture')->store('picture','public');
+    }
        $books->save();
        return redirect('/admin');
     }
 
 
-    function update(Request $req, Books $books){
-
-
-
-        $form = $req->validate([
-            'name' => ['required'],
-            'price' => 'required',
+    function update(Request $request, Books $book)
+    {
+        // $form = $request['parameters'];
+        // dd($request);
+        $form = $request->validate([
+            
+            'name' => 'required',
+            'description' => 'required',
             'auth' => 'required',
             'picture' => 'required',
-        ]);
+            'id_category' => 'required',
+            
 
-        $books->update($form);
+        ]);
+        // dd($request);
+
+        if($request->hasFile('picture')){
+            $form['picture'] = $request->file('picture')->store('picture','public');
+        }
+
+
+        $book->update($form);
 
         return redirect('/admin');
-        // $ID = $req->get('id');
-        // $Name = $req->get('name');
-        // $Price = $req->get('price');
-        // $auth = $req->get('auth');
-        // $picture = $req->file('picture');
+        
+    }
 
-        // $books = books::find($ID);
-
-        // $books->name = $Name;
-        // $books->price = $Price;
-        // $books->auth = $auth;
-        // $books->picture = $picture;
-        // $books->save();
-        // return redirect('/admin');
-
+    public function edit(Books $book){
+        // dd($book);
+        return view('update', [
+            'books' => $book
+        ]);
     }
 
 
+    public function destroy(Books $book)
+    {
+        $book->delete();
 
+        return redirect('/admin')->with('success', 'Book deleted successfully!');
+    }
+    
+    
+    
 }
