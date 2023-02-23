@@ -50,6 +50,11 @@ Route::get('/add_book', function () {
 })->name('add_book');
 
 
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+
 Route::get('books/{book}/edit', [BooksController::class, 'edit'])->name('update');
 
 

@@ -23,7 +23,7 @@
 <div class="flex flex-wrap gap-4">
 @foreach($data as $item)
     <div class="w-80 mt-24 m-auto lg:mt-16 max-w-sm w-60 h-100 ">
-        <img style="width: 16rem;height: 23rem;" src="{{ env('PICTURES') }}{{ $item['picture'] }}" alt="" class="rounded-t-2xl shadow-2xl object-cover" />
+        <img style="width: 20rem;height: 23rem;" src="{{ env('PICTURES') }}{{ $item['picture'] }}" alt="" class="rounded-t-2xl shadow-2xl object-cover" />
         <div class="bg-white shadow-2xl rounded-b-3xl p-3">
             <h2 class="text-center text-gray-800 text-2xl font-bold">{{ $item['name'] }}</h2>
             <div class="w-5/6 mx-auto">
