@@ -1,7 +1,9 @@
 <?php
+use App\Models\category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Models\books;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +48,10 @@ Route::put('/update_book/{book}', [BooksController::class,'update']
 
 
 Route::get('/add_book', function () {
-    return view('add_book');
+    $category = category::all();
+    return view('add_book',[
+        'categories'=> $category
+    ]);
 })->name('add_book');
 
 
@@ -57,7 +62,7 @@ Route::get('/profile', function () {
 
 Route::get('books/{book}/edit', [BooksController::class, 'edit'])->name('update');
 
-
+// Route::resource('/home','categoryController');
 
 Route::get('books/{book}/destroy', [BooksController::class, 'destroy']);
 

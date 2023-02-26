@@ -7,10 +7,10 @@
 
 
 <div class="flex justify-center">
-    <div class="bg-gray-200 p-4">
-        <img src="" alt="">
+    <div class="p-4 gap-20 h-25">
+        <img src="{{ env('PICTURES') }}/about.jpeg" alt="">
     </div>
-    <div class="bg-gray-200 p-4">
+    <div class="p-4 gap-20">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
              Perferendis fuga accusantium odit quo, necessitatibus porro <br>
               facilis obcaecati, dignissimos officia nobis doloribus explicabo <br> 

@@ -3,8 +3,7 @@
 
 
 @section('content')
-
-
+ 
 <!-- component -->
 <div class="overflow-x-auto">
     <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
@@ -15,6 +14,7 @@
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Name</th>
                             <th class="py-3 px-6 text-left">description</th>
+                            <th class="py-3 px-6 text-left">category</th>
                             <th class="py-3 px-6 text-center">Author</th>
                             <th class="py-3 px-6 text-center">Picture</th>
                             <th class="py-3 px-6 text-center">Controll</th>
@@ -33,6 +33,12 @@
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
                                         <span>{{ $book['description'] }}</span>
+                                    </div>
+                                </td>
+                                    
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center">
+                                        <span></span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
@@ -80,5 +86,4 @@
         </div>
     </div>
 </div>
-
 @endsection
