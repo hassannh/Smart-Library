@@ -11,9 +11,7 @@ class books extends Model
 {
     protected $fillable = ['name', 'description', 'auth', 'picture', 'category'];
     use HasFactory;
-
-
-    
+ 
 }
 
 // public function Searchfilter($query, array $filters){

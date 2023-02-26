@@ -45,6 +45,8 @@ Route::post('/insert_book', [BooksController::class,'insert']
 Route::put('/update_book/{book}', [BooksController::class,'update']
 )->name('update_book');
 
+Route::get('/show', [BooksController::class,'show']
+)->name('show_book');
 
 
 Route::get('/add_book', function () {

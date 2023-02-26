@@ -3,7 +3,34 @@
 
 
 @section('content')
- 
+
+<!-- component -->
+<!-- entire page -->
+<main class="flex items-center justify-center">
+    <!-- tabs -->
+    <div class="grid w-[40rem] grid-cols-4 space-x-2 rounded-xl bg-gray-200 p-2" x-data="app">
+        <div>
+            <input type="radio" name="option" id="1" class="peer hidden" checked />
+            <label for="1" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Books</label>
+        </div>
+
+        <div>
+            <input type="radio" name="option" id="2" class="peer hidden" />
+            <label for="2" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Groups</label>
+        </div>
+
+        <div>
+            <input type="radio" name="option" id="3" class="peer hidden" />
+            <label for="3" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Users</label>
+        </div>
+
+        <div>
+            <input type="radio" name="option" id="4" class="peer hidden" />
+            <label for="4" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Admins</label>
+        </div>
+    </div>
+</main>
+
 <!-- component -->
 <div class="overflow-x-auto">
     <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
@@ -35,7 +62,7 @@
                                         <span>{{ $book['description'] }}</span>
                                     </div>
                                 </td>
-                                    
+
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
                                         <span></span>

@@ -19,33 +19,10 @@ class BooksController extends Controller
         // $books = new books();
         $books_data = books::all();
         // $books = request()->query('search');
+
         // $books_data = books::latest()->filters(request(['search']));
         return view('home', ['data.get_books','data' => $books_data]);
     }
-
-
-
-//     public function search( Request $request)
-// {
-//     $books_data = books::select('*');
-
-//     if(isset($request->search) && !empty($request->search))
-//     {
-//         $search = $request->search;
-        
-//         $query->when($filters['search'] ?? false, fn($query, $search) =>
-//         $query->where('name', 'like', '%' . request('search') . '%')
-//                  ->orWhere('created_at', 'like', '%' . request('search') . '%')
-//                    ->orWhere('description', 'like', '%' . request('search') . '%'));
-//     }
-
-//     // $books_data = $books_data->->paginate(2);
-
-    
-//         return view('home', ['data.get_books','data' => $books_data]);
-    
-   
-// }
 
     function get_booksss()
     {
@@ -79,6 +56,8 @@ class BooksController extends Controller
         $books->save();
         return redirect('/admin');
     }
+
+    
 
 
     function update(Request $request, Books $book)
