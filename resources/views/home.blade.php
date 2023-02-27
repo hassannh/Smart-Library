@@ -3,7 +3,7 @@
 @section('content')
 
 
-<livewire:show-posts />
+<livewire:show-books />
 
 
 

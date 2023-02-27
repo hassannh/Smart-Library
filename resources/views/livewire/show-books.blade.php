@@ -21,7 +21,7 @@
                 <div class="bg-white shadow-2xl rounded-b-3xl p-3">
                     <h2 class="text-center text-gray-800 text-2xl font-bold">{{ $item['name'] }}</h2>
                     <div class="w-5/6 mx-auto">
-                        <p class="text-center text-gray-500">You can now read millions of books, audiobooks ands podcasts on any device anywhere you like!</p>
+                        <p class="text-center text-gray-500">{{ $item['description'] }}</p>
                     </div>
                     <div class="bg-blue-700 lg:w-5/6 m-auto mt-6 p-2 hover:bg-indigo-500 rounded-2xl  text-white text-center shadow-xl shadow-bg-blue-700">
                         <button classs="lg:text-sm text-lg font-bold">Download PDF</button>
