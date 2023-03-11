@@ -8,18 +8,15 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('likes', function (Blueprint $table) {
-            $table->integer('id');
+        Schema::create('mumbers', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('id_user')
             ->constrained('users')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->integer('like');
             $table->foreignId('id_book')
             ->constrained('books')
             ->onDelete('cascade')
@@ -30,11 +27,10 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('likes');
+        Schema::dropIfExists('mumbers');
+
     }
 };

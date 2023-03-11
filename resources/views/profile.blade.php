@@ -6,10 +6,10 @@
 
 
 <!-- component -->
+<main class="profile-page">
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-<main class="profile-page">
     <section class="relative block h-500-px">
         <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
             background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
@@ -29,9 +29,9 @@
                     <div class="flex flex-wrap justify-center">
                         <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                             <div class="relative">
-                            
-                            <img alt="..." src="{{ env('PICTURES') }}/hassan.jpg" class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
-                           
+
+                                <img alt="..." src="{{ env('PICTURES') }}/hassan.jpg" class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
+
                             </div>
                         </div>
                         <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
@@ -58,7 +58,7 @@
                     <div class="text-center mt-12">
                         <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
                             <a class="dropdown-item" href="{{ route('profile') }}">
-                            {{ Auth::user()->name }}
+                                {{ Auth::user()->name }}
                             </a>
                         </h3>
                         <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">

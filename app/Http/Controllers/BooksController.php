@@ -16,17 +16,13 @@ class BooksController extends Controller
 
     function get_books()
     {
-        // $books = new books();
         $books_data = books::all();
-        // $books = request()->query('search');
-
         // $books_data = books::latest()->filters(request(['search']));
         return view('home', ['data.get_books','data' => $books_data]);
     }
 
     function get_booksss()
     {
-        // $books = new books();
         $books_data = books::all();
         $category = category::all();
         return view('admin', [

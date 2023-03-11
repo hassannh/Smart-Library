@@ -35,6 +35,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/groups', function () {
+    return view('groups');
+})->name('groups');
 
 
 Route::post('/insert_book', [BooksController::class,'insert']
@@ -60,6 +63,11 @@ Route::get('/add_book', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
+
+
+Route::get('/viewbooks', function () {
+    return view('viewBook');
+})->name('viewBook');
 
 
 Route::get('books/{book}/edit', [BooksController::class, 'edit'])->name('update');

@@ -15,7 +15,7 @@
         
         <div class="grid grid-cols-3 gap-4">
             @foreach ($books as $item)
- 
+            
             <div class="w-80 mt-24 m-auto lg:mt-16 max-w-sm w-60 h-100 ">
                 <img style="width: 20rem;height: 23rem;" src="{{ env('PICTURES') }}{{ $item['picture'] }}" alt="" class="rounded-t-2xl shadow-2xl object-cover" />
                 <div class="bg-white shadow-2xl rounded-b-3xl p-3">
@@ -29,7 +29,7 @@
                     <div class="text-center m-auto mt-6 w-full">
                         <a href="{{route('show_book')}}">
 
-                            <button class="text-gray-500 font-bold lg:text-sm hover:text-gray-900">View</button>
+                            <button class="text-gray-500 font-bold lg:text-sm hover:text-gray-900"> <a href="{{route('viewBook')}} "> View </a></button>
                         </a>
                     </div>
                 </div>

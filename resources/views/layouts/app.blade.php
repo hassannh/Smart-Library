@@ -54,7 +54,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                     </svg>
                 </li>
-                @if (Auth::check() && Auth::user()->Role == 1)
+                <!-- @if (Auth::check() && Auth::user()->Role == 1) -->
                 
 
                     <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="{{route('admin')}}">Admin</a></li>
@@ -64,14 +64,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                     </svg>
                 </li>
-                @endif
+                <!-- @endif -->
                 <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="{{route('contact')}}">contact</a></li>
                 <li class="text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                     </svg>
                 </li>
-                <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="#">groups</a></li>
+                <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="{{route('groups')}}">groups</a></li>
             </ul>
             @guest
             @if (Route::has('login'))
@@ -123,7 +123,7 @@
                         <rect x="14" y="1" width="7" height="6"></rect>
                         <rect x="14" y="11" width="7" height="12"></rect>
                     </svg>
-                    <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span>
+                    <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">G_lIbrary</span>
                 </a>
                 <div class="mt-6 lg:max-w-sm">
                     <p class="text-sm text-gray-800">
@@ -241,55 +241,6 @@
     </script>
 
 
-    <!-- <script type="text/javascript">
-            $('#search').on('keyup',function()
-            {
-                $value = $(this).val();
-                $.ajax
-                ({
-                    
-                    type:'get',
-                    url:'{{URL::to('search')}}',
-                    data:{'search' :$value},
-
-                });
-            })
-        </script> -->
-
-
-    <!-- //search function using laravel?   -->
-
-    <!-- <form role="search" method="GET">
-    <div class="form-group">
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <input type="text" class="form-control" name="q" placeholder="Search Department">
-    </div>
-</form> -->
-
-
-    <!-- public function search(Request $request)
-{
-    $listOfDepartment = Department::select('*');
-
-    if(isset($request->q) && !empty($request->q))
-    {
-        $q = $request->q;
-        $listOfDepartment = $listOfDepartment->where('nameOfDepartment', 'like', '%' . $q . '%');
-        $listOfDepartment = $listOfDepartment->orWhere('createdBy', 'like', '%' . $q . '%');
-    }
-
-    $listOfDepartment = $listOfDepartment->->paginate(2);
-
-    if (count($listOfDepartment) > 0) {
-        return view('pages.department')->withData($listOfDepartment);
-    }
-    // return view('pages.department')->withMessage("No Data Found");
-} -->
-
-
-
-
-    <!--DELIMITER-->Source: https://stackoverflow.com/questions/55720071
 
 
 
