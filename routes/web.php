@@ -3,6 +3,7 @@ use App\Models\category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\GroupsController;
 use App\Models\books;
 
 /*
@@ -35,9 +36,12 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/groups', function () {
-    return view('groups');
-})->name('groups');
+
+
+Route::get('/groups', [GroupsController::class,'get_groups']
+)->name('groups');
+
+
 
 
 Route::post('/insert_book', [BooksController::class,'insert']

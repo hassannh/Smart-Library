@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\books;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,15 +17,9 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->integer('id');
-            $table->foreignId('id_user')
-            ->constrained('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreignIdFor(User::class);
             $table->integer('like');
-            $table->foreignId('id_book')
-            ->constrained('books')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreignIdFor(books::class);
             $table->timestamps();
         });
     }

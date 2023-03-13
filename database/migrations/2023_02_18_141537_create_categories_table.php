@@ -15,10 +15,6 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->integer('id');
-            $table->foreignId('ID_books')
-            ->constrained('books')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
             $table->string('name');
             
         });

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\groups;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,16 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mumbers', function (Blueprint $table) {
+        Schema::create('memberships', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user')
-            ->constrained('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->foreignId('id_book')
-            ->constrained('books')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            $table->foreignIdFor(user::class);
+            $table->foreignIdFor(groups::class);
+
             $table->timestamps();
         });
     }
@@ -30,7 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mumbers');
-
+        Schema::dropIfExists('memberships');
     }
 };
