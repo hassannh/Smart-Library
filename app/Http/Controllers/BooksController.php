@@ -37,7 +37,7 @@ class BooksController extends Controller
         $description = $req->get('description');
         $auth = $req->get('auth');
         $picture = $req->file('picture');
-        $id_category = $req->get('id_category');
+        $id_category = $req->get('category_id');
 
 
         $books = new books();
@@ -45,7 +45,7 @@ class BooksController extends Controller
         $books->description =  $description;
         $books->auth =  $auth;
         $books->picture =  $picture;
-        $books->id_category =  $id_category;
+        $books->category_id =  $id_category;
         if ($req->hasFile('picture')) {
             $form['picture'] = $req->file('picture')->store('picture', 'public');
         }
