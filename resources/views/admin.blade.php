@@ -65,7 +65,7 @@
 
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
-                                        <span></span>
+                                        <span>{{ $book['category']['name']}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
@@ -105,7 +105,7 @@
                     </tbody>
                 </table>
                 <a href="{{route('add_book')}}">
-                    <button class="px-4 py-2 border border-red-600 font-bold text-red-600 text-lg rounded-full" data-target="#staticBackdrop" data-toggle="modal" type="button">
+                    <button class="px-4 py-2 border border-red-600 font-bold text-red-600 text-lg rounded-full my-2 ml-1" data-target="#staticBackdrop" data-toggle="modal" type="button">
                         add book
                     </button>
                 </a>

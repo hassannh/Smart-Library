@@ -13,7 +13,7 @@
         </div>
         
         
-        <div class="grid grid-cols-3 gap-4">
+        <div class="flex flex-wrap gap-4">
             @foreach ($books as $item)
             
             <div class="w-80 mt-24 m-auto lg:mt-16 max-w-sm w-60 h-100 ">
@@ -24,7 +24,7 @@
                         <p class="text-center text-gray-500">{{ $item['description'] }}</p>
                     </div>
                     <div class="bg-blue-700 lg:w-5/6 m-auto mt-6 p-2 hover:bg-indigo-500 rounded-2xl  text-white text-center shadow-xl shadow-bg-blue-700">
-                        <button classs="lg:text-sm text-lg font-bold">Download PDF</button>
+                        <button classs="lg:text-sm text-lg font-bold">Add to favorit</button>
                     </div>
                     <div class="text-center m-auto mt-6 w-full">
                         <a href="{{route('show_book')}}">
