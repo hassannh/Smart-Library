@@ -66,8 +66,7 @@ class BooksController extends Controller
             'description' => 'required',
             'auth' => 'required',
             'picture' => 'required',
-            'id_category' => 'required',
-
+            'category_id' => 'required',
 
         ]);
         // dd($request);
@@ -75,7 +74,6 @@ class BooksController extends Controller
         if ($request->hasFile('picture')) {
             $form['picture'] = $request->file('picture')->store('picture', 'public');
         }
-
 
         $book->update($form);
 

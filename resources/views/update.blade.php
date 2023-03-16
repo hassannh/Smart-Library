@@ -41,10 +41,12 @@
     </div>
 
     <div class="mb-4">
-      <input type="text" placeholder="Enter book category" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" value="{{$books['id_category']}}" name="id_category">
-      @error('id_category')
-          <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-      @enderror
+    <select  class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" name="category" id="">
+        @foreach ($categories as $category )
+          <option value="{{$category->id}}">{{ $category->name }}</option>
+        @endforeach
+        <!-- <input type="text" placeholder="Enter book category" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" name="category"> -->
+      </select>
     </div>
     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">update Record</button>
   </form>

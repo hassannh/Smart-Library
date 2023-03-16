@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\GroupsController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Models\books;
 
 /*
@@ -67,6 +68,8 @@ Route::get('/add_book', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
+
+// Route::get('/profile',[ProfileController::class,'edit'])->name('profile.edit');
 
 
 Route::get('/viewbooks', function () {
