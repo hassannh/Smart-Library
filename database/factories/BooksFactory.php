@@ -17,11 +17,20 @@ class BooksFactory extends Factory
      */
     public function definition()
     {
+
+        $faker = \Faker\Factory::create();
         return [
-            'name' =>$this->faker->name,
-            'price'=>$this->faker->price,
-            'auth'=>$this->faker->auth,
-            'id_category'=>$this->faker->id_category
+            // 'name' =>$this->faker->name,
+            // 'price'=>$this->faker->price,
+            // 'auth'=>$this->faker->auth,
+            // 'id_category'=>$this->faker->id_category
+
+
+            'name' => $this->faker->name,
+            'picture' => $this->faker->imageUrl(),
+            'auth' => $this->faker->name,
+            'description' => $this->faker->text(200),
+            'category_id' => \App\Models\Category::inRandomOrder()->first()->id
         ];
     }
 }
