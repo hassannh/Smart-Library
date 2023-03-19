@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\books;
+use App\Models\groups;
 use App\Models\category;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -16,14 +17,16 @@ class BooksController extends Controller
 
     function get_books()
     {
-        $books_data = books::all();
-        // $books_data = books::latest()->filters(request(['search']));
-        return view('home', ['data.get_books','data' => $books_data]);
+        $books_data = books::paginate(5);
+        return view('home', [
+            'data' => $books_data
+        ]);
     }
+ 
 
     function get_booksss()
     {
-        $books_data = books::all();
+        $books_data = books::paginate(5);
         $category = category::all();
         return view('admin', [
             'data' => $books_data,
@@ -53,7 +56,7 @@ class BooksController extends Controller
         return redirect('/admin');
     }
 
-    
+
 
 
     function update(Request $request, Books $book)

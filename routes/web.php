@@ -31,6 +31,8 @@ Route::get('/home',[BooksController::class,'get_books']
 Route::get('/admin',[BooksController::class,'get_booksss']
 )->name('admin');
 
+Route::get('/groupsAdmin',[groupsController::class,'get_groupsA']
+)->name('groupsAdmin');
 
 
 Route::get('/about', function () {

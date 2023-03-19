@@ -6,9 +6,9 @@
 @section('content')
 
 
-<div class="flex justify-center">
-    <div class="p-4 gap-20 h-25">
-        <img src="{{ env('PICTURES') }}/about.jpeg" alt="">
+<div class="flex justify-around">
+    <div class="px-4 py-4  max-h-auto">
+        <img class="px-3 py-3" src="{{ env('PICTURES') }}/about.jpeg" alt="">
     </div>
     <div class="p-4 gap-20">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>
