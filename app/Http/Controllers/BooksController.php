@@ -61,22 +61,22 @@ class BooksController extends Controller
 
     function update(Request $request, Books $book)
     {
-        // $form = $request['parameters'];
-        // dd($request);
+        dd($request);
         $form = $request->validate([
 
             'name' => 'required',
             'description' => 'required',
             'auth' => 'required',
-            'picture' => 'required',
+            // 'picture' => 'required',
             'category_id' => 'required',
 
         ]);
         // dd($request);
 
-        if ($request->hasFile('picture')) {
-            $form['picture'] = $request->file('picture')->store('picture', 'public');
-        }
+
+        // if ($request->hasFile('picture')) {
+        //     $form['picture'] = $request->file('picture')->store('picture', 'public');
+        // }
 
         $book->update($form);
 
@@ -86,8 +86,11 @@ class BooksController extends Controller
     public function edit(Books $book)
     {
         // dd($book);
+        $category = category::all();
         return view('update', [
-            'books' => $book
+            'books' => $book,
+            'categories' => $category
+
         ]);
     }
 

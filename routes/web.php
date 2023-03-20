@@ -34,6 +34,8 @@ Route::get('/admin',[BooksController::class,'get_booksss']
 Route::get('/groupsAdmin',[groupsController::class,'get_groupsA']
 )->name('groupsAdmin');
 
+Route::get('/showUsers',[groupsController::class,'get_users']
+)->name('showUsers');
 
 Route::get('/about', function () {
     return view('about');
@@ -45,6 +47,8 @@ Route::get('/groups', [GroupsController::class,'get_groups']
 )->name('groups');
 
 
+Route::post('/add_group', [GroupsController::class,'add_group']
+)->name('add_group');
 
 
 Route::post('/insert_book', [BooksController::class,'insert']
@@ -71,7 +75,10 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
-// Route::get('/profile',[ProfileController::class,'edit'])->name('profile.edit');
+Route::get('/newGroup', function () {
+    return view('addGroups');
+})->name('newGroup');
+
 
 
 Route::get('/viewbooks', function () {

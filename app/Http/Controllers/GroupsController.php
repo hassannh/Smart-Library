@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 use App\Models\groups;
+use App\Models\user;
 
 use Illuminate\Http\Request;
 
 class GroupsController extends Controller
 {
+
+    public function get_users()
+    {
+        $users = user::paginate(5);
+        return view('showUsers', [
+            'data' => $users]);
+    }
+    
     function get_groups()
     {
         $groups_data = groups::all();
@@ -22,5 +31,19 @@ class GroupsController extends Controller
         return view('admin', [
             'data' => $groups_data
         ]);
+    }
+
+
+
+
+
+    public function add_group(Request $req)
+    {
+            $name = $req->get('name');
+            
+            $group = new groups();
+            $group->name =  $name;
+            $group->save();
+            return redirect('/admin');
     }
 }

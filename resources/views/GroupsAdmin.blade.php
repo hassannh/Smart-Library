@@ -20,7 +20,7 @@
 
         <div>
             <input type="radio" name="option" id="3" class="peer hidden" />
-            <label for="3" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Users</label>
+            <label for="3" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:font-bold peer-checked:text-white"><a href="{{route('showUsers')}}">Users</a></label>
         </div>
 
         <div>

@@ -65,7 +65,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
           </a>
-          <a class="text-white/50 group-hover:text-white group-hover:smooth-hover text-center" href="#">Create group</a>
+          <a class="text-white/50 group-hover:text-white group-hover:smooth-hover text-center" href="{{route('newGroup')}}">Create group</a>
         </div>
         @foreach ($data as $group)
         <div class="relative group bg-gray-900 py-10 sm:py-20 px-4 flex flex-col space-y-2 items-center cursor-pointer rounded-md hover:bg-gray-900/80 hover:smooth-hover">

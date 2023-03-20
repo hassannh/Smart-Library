@@ -32,16 +32,16 @@
       @enderror
     </div>
 
-    <div class="mb-4">
-      <input type="file" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" value="" name="picture">
+    <!-- <div class="mb-4">
+      <input type="file" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" value="{{$books['picture']}}" name="picture">
 
       @error('picture')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
       @enderror
-    </div>
+    </div> -->
 
     <div class="mb-4">
-    <select  class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" name="category" id="">
+    <select  class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" name="category" >
         @foreach ($categories as $category )
           <option value="{{$category->id}}">{{ $category->name }}</option>
         @endforeach
