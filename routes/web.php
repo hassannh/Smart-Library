@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\GroupsController;
 use App\Http\Controllers\Auth\ProfileController;
+use App\Http\Controllers\FavorisController;
 use App\Models\books;
 
 /*
@@ -29,7 +30,7 @@ Route::get('/home',[BooksController::class,'get_books']
 
 
 Route::get('/admin',[BooksController::class,'get_booksss']
-)->name('admin');
+)->name('admin')->middleware('auth');
 
 Route::get('/groupsAdmin',[groupsController::class,'get_groupsA']
 )->name('groupsAdmin');
@@ -47,8 +48,20 @@ Route::get('/groups', [GroupsController::class,'get_groups']
 )->name('groups');
 
 
+Route::get('/joinGroup', [GroupsController::class,'join_group']
+)->name('joinGroup');
+
+
+
+
 Route::post('/add_group', [GroupsController::class,'add_group']
 )->name('add_group')->middleware('auth');
+
+
+
+Route::post('/addFavorite', [FavorisController::class,'add']
+)->name('addFavorite')->middleware('auth');
+
 
 
 Route::post('/insert_book', [BooksController::class,'insert']
@@ -79,7 +92,7 @@ Route::get('/profile', function () {
 
 Route::get('/newGroup', function () {
     return view('addGroups');
-})->name('newGroup');
+})->name('newGroup')->middleware('auth');
 
 
 

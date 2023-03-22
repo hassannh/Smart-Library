@@ -90,12 +90,6 @@
 
                     {{$data->links()}}
                 </div>
-
-                <a href="{{route('add_book')}}">
-                    <button class="px-4 py-2 border border-red-600 font-bold text-red-600 text-lg rounded-full my-2 ml-1" data-target="#staticBackdrop" data-toggle="modal" type="button">
-                        add book
-                    </button>
-                </a>
             </div>
         </div>
     </div>

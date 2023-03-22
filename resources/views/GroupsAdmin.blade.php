@@ -34,12 +34,12 @@
 <div class="overflow-x-auto">
     <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
         <div class="w-full lg:w-5/6">
-            <div class="bg-white shadow-md rounded my-6">
+            <div class="my-6">
                 <table class="min-w-max w-full table-auto">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Name</th>
-                            <th class="py-3 px-6 text-center">mumbers</th>
+                            <th class="py-3 px-6 text-center">user name</th>
                             <th class="py-3 px-6 text-center">Controll</th>
                         </tr>
                     </thead>
@@ -48,23 +48,20 @@
                         @foreach($data as $groups)
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
                             <form action="update_delete" method="get">
+
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium" value="{{ $groups['name'] }}">{{ $groups['name'] }}</span>
+                                        <span class="font-medium" >{{ $groups['name'] }}</span>
                                     </div>
                                 </td>
                                 
                                 
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium" value="{{ $groups['name'] }}">{{ $groups['mumbers'] }}</span>
+                                        <span class="font-medium">{{ $groups['user']['name'] }}</span>
                                     </div>
                                 </td>
                             
-                                <td class="py-3 px-6 text-center">
-                                    <!-- <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">Active</span> -->
-                                    <img style="width: 2rem;" src="{{ env('PICTURES') }}{{ $groups['picture'] }}" alt="">
-                                </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">

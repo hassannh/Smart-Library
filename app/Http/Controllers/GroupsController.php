@@ -28,13 +28,12 @@ class GroupsController extends Controller
     function get_groupsA()
     {
         $groups_data = groups::paginate(5);
-        return view('admin', [
-            'data' => $groups_data
+        $user = user::all();
+        return view('GroupsAdmin', [
+            'data' => $groups_data,
+            'user' => $user
         ]);
     }
-
-
-
 
 
     public function add_group(Request $req)
@@ -48,5 +47,11 @@ class GroupsController extends Controller
             $group->user_id =  $user_id;
             $group->save();
             return redirect('/admin');
+    }
+
+
+    public function join_group()
+    {
+        return view('joinGroup');
     }
 }

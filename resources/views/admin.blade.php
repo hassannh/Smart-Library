@@ -35,7 +35,7 @@
 <div class="overflow-x-auto">
     <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
         <div class="w-full lg:w-5/6">
-            <div class="bg-white shadow-md rounded my-6">
+            <div class="my-6">
                 <table class="min-w-max w-full table-auto">
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
@@ -65,6 +65,7 @@
 
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
+                                    <span>{{ $book['category']['name'] }}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
