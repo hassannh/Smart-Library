@@ -39,9 +39,6 @@
                     <thead>
                         <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Name</th>
-                            <!-- <th class="py-3 px-6 text-left">description</th> -->
-                            <!-- <th class="py-3 px-6 text-left">category</th> -->
-                            <!-- <th class="py-3 px-6 text-center">Author</th> -->
                             <th class="py-3 px-6 text-center">mumbers</th>
                             <th class="py-3 px-6 text-center">Controll</th>
                         </tr>
@@ -53,14 +50,14 @@
                             <form action="update_delete" method="get">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium" value="{{ $book['name'] }}">{{ $groups['name'] }}</span>
+                                        <span class="font-medium" value="{{ $groups['name'] }}">{{ $groups['name'] }}</span>
                                     </div>
                                 </td>
                                 
                                 
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium" value="{{ $book['name'] }}">{{ $groups['mumbers'] }}</span>
+                                        <span class="font-medium" value="{{ $groups['name'] }}">{{ $groups['mumbers'] }}</span>
                                     </div>
                                 </td>
                             

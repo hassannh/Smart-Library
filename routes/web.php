@@ -48,11 +48,11 @@ Route::get('/groups', [GroupsController::class,'get_groups']
 
 
 Route::post('/add_group', [GroupsController::class,'add_group']
-)->name('add_group');
+)->name('add_group')->middleware('auth');
 
 
 Route::post('/insert_book', [BooksController::class,'insert']
-)->name('insert_book');
+)->name('insert_book')->middleware('auth');
 
 
 
@@ -68,16 +68,19 @@ Route::get('/add_book', function () {
     return view('add_book',[
         'categories'=> $category
     ]);
-})->name('add_book');
+})->name('add_book')->middleware('auth');
 
 
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
+
+
 Route::get('/newGroup', function () {
     return view('addGroups');
 })->name('newGroup');
+
 
 
 

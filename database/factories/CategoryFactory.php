@@ -16,8 +16,11 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create();
+
         return [
-            //
+            'id' => $faker->unique()->randomNumber(),
+            'name' => $this->faker->name,
         ];
     }
 }

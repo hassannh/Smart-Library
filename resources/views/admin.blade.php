@@ -65,7 +65,6 @@
 
                                 <td class="py-3 px-6 text-left">
                                     <div class="flex items-center">
-                                    <span>{{ $book['category']['name'] }}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">

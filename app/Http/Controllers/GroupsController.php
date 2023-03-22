@@ -39,10 +39,13 @@ class GroupsController extends Controller
 
     public function add_group(Request $req)
     {
+        // dd($req);
             $name = $req->get('name');
-            
+            $user_id = auth()->user()->id;
+
             $group = new groups();
             $group->name =  $name;
+            $group->user_id =  $user_id;
             $group->save();
             return redirect('/admin');
     }

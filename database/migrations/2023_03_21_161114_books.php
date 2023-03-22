@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\category;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,11 +15,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('auth');
             $table->string('picture');
             $table->string('description');
+            $table->foreignIdFor(category::class);
             $table->timestamps();
         });
     }
