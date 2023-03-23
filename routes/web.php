@@ -116,6 +116,8 @@ Route::get('books/{book}/edit', [BooksController::class, 'edit'])->name('update'
 // Route::resource('/home','categoryController');
 
 Route::get('books/{book}/destroy', [BooksController::class, 'destroy']);
+Route::get('categories/{category}/destroy', [CategoryController::class, 'destroy']);
+Route::get('groups/{group}/destroy', [GroupsController::class, 'destroy']);
 
 
 

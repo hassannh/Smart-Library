@@ -54,4 +54,13 @@ class GroupsController extends Controller
     {
         return view('joinGroup');
     }
+
+
+
+    public function destroy(groups $groups)
+    {
+        $groups->delete();
+
+        return redirect('/groupsAdmin')->with('success', 'group deleted successfully!');
+    }
 }
