@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\GroupsController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\FavorisController;
 use App\Models\books;
@@ -38,11 +39,13 @@ Route::get('/groupsAdmin',[groupsController::class,'get_groupsA']
 Route::get('/showUsers',[groupsController::class,'get_users']
 )->name('showUsers');
 
+Route::get('/categories',[CategoryController::class,'get_categories']
+)->name('categories');
+
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
-
-
 
 Route::get('/groups', [GroupsController::class,'get_groups']
 )->name('groups');
@@ -57,6 +60,9 @@ Route::get('/joinGroup', [GroupsController::class,'join_group']
 Route::post('/add_group', [GroupsController::class,'add_group']
 )->name('add_group')->middleware('auth');
 
+
+Route::post('/add_category', [CategoryController::class,'add_category']
+)->name('add_category');
 
 
 Route::post('/addFavorite', [FavorisController::class,'add']
@@ -83,6 +89,9 @@ Route::get('/add_book', function () {
     ]);
 })->name('add_book')->middleware('auth');
 
+Route::get('/insertCategory', function () {
+    return view('addCategory');
+})->name('insertCategory')->middleware('auth');
 
 Route::get('/profile', function () {
     return view('profile');
@@ -110,18 +119,11 @@ Route::get('books/{book}/destroy', [BooksController::class, 'destroy']);
 
 
 
-// Route::get('/update_bookk', function () {
-//     return view('update');
-// })->name('update_bookk');
-
-
-
-
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
 
 
-// Route::get('update_delete',[BooksController::class ,'updateORdelete']);
+
 

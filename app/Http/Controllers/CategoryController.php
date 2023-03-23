@@ -2,33 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    
+
+
+    public function get_categories()
     {
-        //
+        $category_data = category::paginate(5);
+        return view('categoryAdmin', [
+            'data' => $category_data
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function add_category(Request $req)
     {
-        //
+        $name = $req->get('name');
+        $category = new category();
+        $category->name =  $name;
+        $category->save();
+        return redirect('/categories');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
