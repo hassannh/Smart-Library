@@ -46,7 +46,7 @@ class GroupsController extends Controller
             $group->name =  $name;
             $group->user_id =  $user_id;
             $group->save();
-            return redirect('/admin');
+            return redirect('/groups');
     }
 
 

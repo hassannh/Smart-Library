@@ -25,20 +25,20 @@
       @enderror
     </div>
     <div class="mb-4">
-      <input type="text" placeholder="Enter book author" value="{{$books['auth']}}" name="auth" style="width: 100%;" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 ">
+      <input type="text" value="{{$books['auth']}}" name="auth" style="width: 100%;" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 ">
 
       @error('auth')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
       @enderror
     </div>
 
-    <!-- <div class="mb-4">
+    <div class="mb-4">
       <input type="file" class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" value="{{$books['picture']}}" name="picture">
 
       @error('picture')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
       @enderror
-    </div> -->
+    </div>
 
     <div class="mb-4">
     <select  class="px-4 py-2 rounded-lg border-gray-300 focus:border-blue-500 bg-white w-full" name="category" >
