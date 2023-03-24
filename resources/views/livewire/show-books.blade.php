@@ -33,7 +33,7 @@
                 <div class="text-center m-auto mt-6 w-full">
                     <a href="{{route('show_book')}}">
 
-                        <button class="text-gray-500 font-bold lg:text-sm hover:text-gray-900"> <a href="{{route('viewBook')}} "> View </a></button>
+                        <button class="text-gray-500 font-bold lg:text-sm hover:text-gray-900"> <a href="/books/{{$item->id}} "> View </a></button>
                     </a>
                 </div>
             </div>

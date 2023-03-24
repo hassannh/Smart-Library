@@ -93,6 +93,16 @@ class BooksController extends Controller
     }
 
 
+    public function show($id)
+    {
+        $book = books::find($id);
+        
+        return view('viewBook', [
+            'book' => $book
+        ]);
+    }
+
+
     public function destroy(Books $book)
     {
         $book->delete();

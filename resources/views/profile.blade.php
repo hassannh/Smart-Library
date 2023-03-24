@@ -6,9 +6,9 @@
 
 
 <!-- component -->
-<main class="profile-page">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
     <section class="relative block h-500-px">
         <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
@@ -44,7 +44,7 @@
                         <div class="w-full lg:w-4/12 px-4 lg:order-1">
                             <div class="flex justify-center py-4 lg:pt-4 pt-8">
                                 <div class="mr-4 p-3 text-center">
-                                    <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">22</span><span class="text-sm text-blueGray-400">Friends</span>
+                                    <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">22</span><span class="text-sm text-blueGray-400">Favorite</span>
                                 </div>
                                 <div class="mr-4 p-3 text-center">
                                     <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span class="text-sm text-blueGray-400">Photos</span>
@@ -66,8 +66,8 @@
                             Los Angeles, California
                         </div>
                         <div class="mb-2 text-blueGray-600 mt-10">
-                            <i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>My Favorite Books 
-                            {{  }}
+                            <i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>My Favorite Books
+
                         </div>
                         <div class="mb-2 text-blueGray-600">
                             <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>University of Computer Science
@@ -92,6 +92,6 @@
         </div>
 
     </section>
-</main>
+
 
 @endsection

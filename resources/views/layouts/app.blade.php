@@ -58,7 +58,8 @@
                     </svg>
                 </li>
 
-                @if (auth()->user()->role == 1)
+                @if (auth()->check() && auth()->user()->role == 1)
+                
                 
                 <li><a class="text-sm hover:text-blue-500 font-bold no-underline text-black" href="{{route('admin')}}">Admin</a></li>
                 

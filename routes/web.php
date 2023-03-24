@@ -52,7 +52,7 @@ Route::get('/groups', [GroupsController::class,'get_groups']
 
 
 Route::get('/joinGroup', [GroupsController::class,'join_group']
-)->name('joinGroup');
+)->name('joinGroup')->middleware('auth');
 
 
 
@@ -124,6 +124,8 @@ Route::get('groups/{group}/destroy', [GroupsController::class, 'destroy']);
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/books/{book}', [BooksController::class, 'show'])->name('books');
 
 
 
