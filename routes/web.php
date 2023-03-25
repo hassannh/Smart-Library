@@ -22,23 +22,36 @@ use App\Models\books;
 */
 Auth::routes();
 
-Route::get('/',[BooksController::class,'get_books']
-)->name('home');
+
+
+Route::controller(BooksController::class)->group(function(){
+
+    Route::get('/','get_books')->name('home');
+    Route::get('/home','get_books')->name('home');
+    Route::get('/admin','get_booksss')->name('admin')->middleware('auth');
+    Route::post('/insert_book','insert')->name('insert_book')->middleware('auth');
+    Route::put('/update_book/{book}','update')->name('update_book');
+    Route::get('/show','show')->name('show_book');
+    Route::get('books/{book}/edit', 'edit')->name('update');
+    Route::get('books/{book}/destroy', 'destroy');
+    Route::get('/books/{book}', 'show')->name('books');
+});
 
 
 
-Route::get('/home',[BooksController::class,'get_books']
-)->name('home');
+
+Route::controller(groupsController::class)->group(function(){
+
+    Route::get('/groupsAdmin','get_groupsA')->name('groupsAdmin');
+    Route::get('/showUsers','get_users')->name('showUsers');
+    Route::get('/groups', 'get_groups')->name('groups');
+    Route::delete('/deleteProfile/{id}', 'deleteProfile')->name('deleteProfile')->middleware('auth');
+    Route::post('/add_group', 'add_group')->name('add_group')->middleware('auth');
+    Route::get('groups/{group}/destroy',  'destroy');
+   
+});
 
 
-Route::get('/admin',[BooksController::class,'get_booksss']
-)->name('admin')->middleware('auth');
-
-Route::get('/groupsAdmin',[groupsController::class,'get_groupsA']
-)->name('groupsAdmin');
-
-Route::get('/showUsers',[groupsController::class,'get_users']
-)->name('showUsers');
 
 Route::get('/categories',[CategoryController::class,'get_categories']
 )->name('categories');
@@ -48,20 +61,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/groups', [GroupsController::class,'get_groups']
-)->name('groups');
 
 
-Route::get('/joinGroup/{id}', [GroupsController::class,'join_group']
-)->name('joinGroup')->middleware('auth');
+Route::get('/joinGroup/{id}', function($id){
+    return view('joinGroup',['id'=>$id]);
+} )->name('joinGroup')->middleware('auth');
 
 
-Route::delete('/deleteProfile/{id}', [GroupsController::class,'deleteProfile']
-)->name('deleteProfile')->middleware('auth');
 
-
-Route::post('/add_group', [GroupsController::class,'add_group']
-)->name('add_group')->middleware('auth');
 
 Route::post('/add_comment', [CommentsController::class,'addComment']
 )->name('addComment')->middleware('auth');
@@ -78,16 +85,7 @@ Route::post('/addFavorite', [FavorisController::class,'add']
 
 
 
-Route::post('/insert_book', [BooksController::class,'insert']
-)->name('insert_book')->middleware('auth');
 
-
-
-Route::put('/update_book/{book}', [BooksController::class,'update']
-)->name('update_book');
-
-Route::get('/show', [BooksController::class,'show']
-)->name('show_book');
 
 
 Route::get('/add_book', function () {
@@ -119,13 +117,10 @@ Route::get('/viewbooks', function () {
 })->name('viewBook');
 
 
-Route::get('books/{book}/edit', [BooksController::class, 'edit'])->name('update');
 
-// Route::resource('/home','categoryController');
 
-Route::get('books/{book}/destroy', [BooksController::class, 'destroy']);
 Route::get('categories/{category}/destroy', [CategoryController::class, 'destroy']);
-Route::get('groups/{group}/destroy', [GroupsController::class, 'destroy']);
+
 
 
 
@@ -133,7 +128,6 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/books/{book}', [BooksController::class, 'show'])->name('books');
 
 
 

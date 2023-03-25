@@ -51,13 +51,6 @@ class GroupsController extends Controller
     }
 
 
-    public function join_group($id)
-    {
-        return view('joinGroup')->with('id', $id);
-    }
-
-
-
     public function deleteProfile($id)
     {
         $user = User::find($id);
