@@ -5,6 +5,7 @@ use App\Models\groups;
 use App\Models\user;
 
 use Illuminate\Http\Request;
+use PhpParser\Builder\Param;
 
 class GroupsController extends Controller
 {
@@ -50,9 +51,24 @@ class GroupsController extends Controller
     }
 
 
-    public function join_group()
+    public function join_group($id)
     {
-        return view('joinGroup');
+        return view('joinGroup')->with('id', $id);
+    }
+
+
+
+    public function deleteProfile($id)
+    {
+        $user = User::find($id);
+        
+        if (!$user) {
+            return redirect('/')->with('error', 'User not found!');
+        }
+        
+        $user->delete();
+        
+        return redirect('/')->with('success', 'User deleted successfully!');
     }
 
 

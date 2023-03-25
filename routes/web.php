@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\GroupsController;
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\FavorisController;
@@ -51,15 +52,22 @@ Route::get('/groups', [GroupsController::class,'get_groups']
 )->name('groups');
 
 
-Route::get('/joinGroup', [GroupsController::class,'join_group']
+Route::get('/joinGroup/{id}', [GroupsController::class,'join_group']
 )->name('joinGroup')->middleware('auth');
 
 
+Route::delete('/deleteProfile/{id}', [GroupsController::class,'deleteProfile']
+)->name('deleteProfile')->middleware('auth');
 
 
 Route::post('/add_group', [GroupsController::class,'add_group']
 )->name('add_group')->middleware('auth');
 
+Route::post('/add_comment', [CommentsController::class,'addComment']
+)->name('addComment')->middleware('auth');
+
+Route::get('/all_comment/{id}', [CommentsController::class,'getAllComments']
+)->name('allComment')->middleware('auth');
 
 Route::post('/add_category', [CategoryController::class,'add_category']
 )->name('add_category');
