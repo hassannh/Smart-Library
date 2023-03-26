@@ -11,18 +11,19 @@
     <div class="grid w-[40rem] grid-cols-4 space-x-2 rounded-xl bg-gray-200 p-2" x-data="app">
         <div>
             <input type="radio" name="option" id="1" class="peer hidden" checked />
-           <a href="{{route('admin')}}"> <label for="1" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Books</label></a>
+            <a href="{{route('admin')}}"> <label for="1" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Books</label></a>
         </div>
 
         <div>
             <input type="radio" name="option" id="2" class="peer hidden" />
-            <a href="{{route('groupsAdmin')}}"> <label for="2" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Groups</label></a>        </div>
+            <a href="{{route('groupsAdmin')}}"> <label for="2" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Groups</label></a>
+        </div>
 
         <div>
             <input type="radio" name="option" id="3" class="peer hidden" />
             <label for="3" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:font-bold peer-checked:text-white"><a href="{{route('showUsers')}}">Users</a></label>
         </div>
-        
+
         <div>
             <input type="radio" name="option" id="3" class="peer hidden" />
             <label for="3" class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:font-bold peer-checked:text-white"><a href="{{route('categories')}}">Categories</a></label>
@@ -51,17 +52,19 @@
 
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium" >{{ $groups['name'] }}</span>
+                                        <span class="font-medium">{{ $groups['name'] }}</span>
                                     </div>
                                 </td>
-                                
-                                
+
+
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
+                                        @if(isset($groups['user']) && $groups['user'] !== null)
                                         <span class="font-medium">{{ $groups['user']['name'] }}</span>
+                                        @endif
                                     </div>
                                 </td>
-                            
+
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">

@@ -65,11 +65,13 @@ Route::get('/about', function () {
 
 
 
-Route::get('/joinGroup/{id}', function($id){
-    return view('joinGroup',['id'=>$id]);
-} )->name('joinGroup')->middleware('auth');
+// Route::get('/joinGroup/{id}', function($id){
+//     return view('joinGroup',['id' => $id]);
+// } )->name('joinGroup')->middleware('auth');
 
 
+Route::get('/joinGroup/{id}', [groupsController::class,'get_group_byId']
+)->name('joinGroup')->middleware('auth');
 
 
 Route::post('/add_comment', [CommentsController::class,'addComment']

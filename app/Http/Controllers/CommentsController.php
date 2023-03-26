@@ -17,7 +17,7 @@ class CommentsController extends Controller
         $data->user_id = $user_id;
         $data->groups_id = $group_id; 
         $data->save();
-        
+
         return response()->json($data);
 
     }
@@ -27,3 +27,4 @@ class CommentsController extends Controller
         return view('joinGroup',['data'=>$data]);
     }
 }
+ 
