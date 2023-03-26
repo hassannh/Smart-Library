@@ -24,7 +24,16 @@ class GroupsController extends Controller
         return view('groups', ['data.get_groups','data' => $groups_data]);
     }
 
+    function get_group_byId($id){
+        $groups_data = groups::find($id);
+        if (!$groups_data) {
+            abort(404);
+        }
+        $comments = $groups_data->comments;
 
+        // Pass the group id and comments to the view
+        return view('joinGroup', ['id' => $id, 'comments' => $comments]);
+    }
 
     function get_groupsA()
     {

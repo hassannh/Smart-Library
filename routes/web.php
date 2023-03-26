@@ -40,6 +40,8 @@ Route::controller(BooksController::class)->group(function(){
 
 
 
+Route::get('/groups/{id}',[groupsController::class,'get_group_byId']);
+
 Route::controller(groupsController::class)->group(function(){
 
     Route::get('/groupsAdmin','get_groupsA')->name('groupsAdmin');

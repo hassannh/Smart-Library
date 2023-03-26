@@ -17,7 +17,9 @@ class CommentsController extends Controller
         $data->user_id = $user_id;
         $data->groups_id = $group_id; 
         $data->save();
-        $this->getAllComments($group_id);
+        
+        return response()->json($data);
+
     }
     public function getAllComments($id)
     {
