@@ -24,7 +24,7 @@
     <div id="app">
         <!-- component -->
 
-        <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+        <nav class="fixed top-0 left-0 relative px-4 py-4 flex justify-between items-center bg-white">
             <a class="text-3xl font-bold leading-none" href="#">
 
                 <svg class="h-10" alt="logo" viewBox="0 0 10240 10240">

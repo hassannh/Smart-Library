@@ -7,15 +7,15 @@
 
 <div class="dark:bg-gray-800 dark:text-gray-50 mx-5 my-5">
 	<div class="container grid grid-cols-12 mx-auto dark:bg-gray-900">
-		<div class="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4">
-            <img src="../../storage/app/public/picture/1373.jpeg" alt="">
+		<div class="bg-no-repeat bg-cover dark:bg-gray-700 col-span-full lg:col-span-4" style="background-image: url('../../storage/app/public/picture/1373.jpeg');">
+            <img src="" alt="">
         </div>
 		<div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
 			<div class="flex justify-start">
 				<span class="px-2 py-1 text-xs rounded-full dark:bg-violet-400 dark:text-gray-900">Label</span>
 			</div>
-			<h1 class="text-3xl font-semibold">Lorem ipsum dolor sit.</h1>
-			<p class="flex-1 pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, reprehenderit adipisci tempore voluptas laborum quod.</p>
+			<h1 class="text-3xl font-semibold">book_in_the_wood</h1>
+			<p class="flex-1 pt-2">Perspiciatis illo quia laboriosam nulla sint nobis numquam..</p>
 			<a rel="noopener noreferrer" href="#" class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm dark:text-violet-400">
 				<span>Read more</span>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
@@ -59,7 +59,7 @@
  </div>
  </div>
  @empty
-     <div>
+     <div class="flex justify-center font-bold">
         No Comments
      </div>
  @endforelse
@@ -112,16 +112,11 @@
     <form id="comment-form">
         @csrf
         <input type="hidden" name="groups_id" value="{{$id}}">
-        <textarea class="bg-gray-100 dark:bg-gray-700 rounded-3xl px-4 pt-2 pb-2.5" name="comment" id="" cols="30" rows="10">comment</textarea> 
+        <input class="bg-gray-100 dark:bg-gray-700 rounded-3xl px-4 pt-2 pb-2.5" name="comment" id="" cols="30" rows="10"> 
         <button type="submit">submit</button>
     </form>
 
 </div>
-
-
-
-
-
 
 
 @endsection
