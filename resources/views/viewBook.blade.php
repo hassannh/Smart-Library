@@ -69,11 +69,11 @@
                     <button type="button" class="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
                         Read
                     </button>
-                  <form method="POST" action="{{ route('addFavorite') }}">
-                        @csrf
-                        <input type="hidden" name="books_id" value="{{ $id }}">
-                        <button type="submit">Add to favorites</button>
-                    </form>
+                    <a href="#">
+                        <button type="button" class="w-full bg-indigo-50 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
+                            Add to favourites
+                        </button>
+                    </a>
 
                     <form action="/books/{{$book->id}}" method="POST">
                         <a href="/books/{{$book->id}}/edit"> <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">  Like  </button> </a>

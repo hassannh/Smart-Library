@@ -62,22 +62,19 @@ class BooksController extends Controller
     function update(Request $request, Books $book)
     {
 
-        // dd($request);
-        $form = $request->validate([
-            
-            'name' => 'required',
-            'description' => 'required',
-            'auth' => 'required',
-            'picture' => 'required',
-            'category_id' => 'required',  
-        ]);
-        
+        $form = $request->all();
+    
         if ($request->hasFile('picture')) {
-            $form['picture'] = $request->file('picture')->store('picture', 'public');
+            $picturePath = $request->file('picture')->store('public/picture');
+            $form['picture'] = $picturePath;
         }
-
+        
+        // Convert category string to integer
+        $form['category_id'] = (int)$form['category'];
+        unset($form['category']);
+        
         $book->update($form);
-
+    
         return redirect('/admin');
     }
 
