@@ -73,18 +73,14 @@ class GroupsController extends Controller
         return redirect('/')->with('success', 'User deleted successfully!');
     }
     
-    // public function editeProfile($id)
-    // {
-    //     $user = User::find($id);
+    public function updateProfile($id)
+    {
+        $user = User::find($id);
+        return view('updateProfile',[
+            'user' => $user
+        ]);
         
-    //     if (!$user) {
-    //         return redirect('/')->with('error', 'User not found!');
-    //     }
-        
-    //     $user->update();
-        
-    //     return redirect('/')->with('success', 'User deleted successfully!');
-    // }
+    }
 
 
     public function destroy(groups $groups)

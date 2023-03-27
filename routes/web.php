@@ -48,6 +48,10 @@ Route::controller(groupsController::class)->group(function(){
     Route::get('/showUsers','get_users')->name('showUsers');
     Route::get('/groups', 'get_groups')->name('groups');
     Route::delete('/deleteProfile/{id}', 'deleteProfile')->name('deleteProfile')->middleware('auth');
+    
+    Route::put('/updateProfile/{id}', 'updateProfile')->name('updateProfile')->middleware('auth');
+    
+    Route::put('/updateP/{id}', 'updateP')->name('updateP')->middleware('auth');
 
     Route::post('/add_group', 'add_group')->name('add_group')->middleware('auth');
     Route::get('groups/{group}/destroy',  'destroy');
